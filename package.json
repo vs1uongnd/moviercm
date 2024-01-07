@@ -1,0 +1,59 @@
+{
+  "name": "moviercm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "yarn lint:es && yarn lint:style",
+    "lint:es": "eslint . --ext ts,tsx,js",
+    "lint:style": "stylelint 'src/**/styled.ts' 'src/**/*.tsx'",
+    "lint-staged": {
+      "*.{ts,tsx,js,jsx}": [
+        "eslint --cache"
+      ],
+      "styled.ts": [
+        "stylelint --cache"
+      ]
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "yarn lint-staged && yarn check:type"
+      }
+    }
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "prettier": "^3.1.1",
+    "stylelint": "^13.13.1",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
